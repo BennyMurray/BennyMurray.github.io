@@ -88,7 +88,9 @@
 
 
 
-
+    <div id="overlay" class="overlay">
+        <div class="txt">Overlay</div>
+    </div>
 
     </div>
 
@@ -104,12 +106,12 @@
 
     // listen to events...
     mc.on("swiperight", function(ev) {
-        document.getElementById('noun_title').style.color = 'orange';
+        document.getElementById('overlay').style.display = 'none';
     });
 
     // listen to events...
     mc.on("swipeleft", function(ev) {
-        document.getElementById('noun_title').style.color = 'pink';
+        document.getElementById('overlay').style.display = 'inline-block';
     });
 
 
