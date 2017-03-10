@@ -81,7 +81,7 @@
         <div id="parameters_container" class="row text-align-center">
 
 
-            <div class=".col-2 col-centered margin-right-zero"><img id="number_parameter_image" class="parameter_symbol" src="static/singular_symbol.svg"/><br><h5 id="quantity_title" class="parameter_subtitle">singular</h5></div>
+            <div class=".col-2 col-centered margin-right-zero"><img id="quantity_image" class="parameter_symbol" src="static/singular_symbol.svg"/><br><h5 id="quantity_title" class="parameter_subtitle">singular</h5></div>
             <div class=".col-2 col-centered margin-left-zero"><img id="case_parameter_image" class="parameter_symbol" src="static/case_symbol.svg"/><br><h5 id="case_title" class="parameter_subtitle">dative</h5></div>
 
         </div>
@@ -182,6 +182,7 @@
         document.getElementById('choice_title_right').innerHTML = question['incorrect_answer'];
         document.getElementById('case_title').innerHTML = question['correct_case'];
         document.getElementById('quantity_title').innerHTML = question['quantity'];
+        document.getElementById('quantity_image').src='static/'+ question['quantity'] + '_symbol.svg';
 
 
 
@@ -315,7 +316,7 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "dative_plural": "случаю",
             "prepositional_plural": "случаем",
             "instrumental_plural": "случае",
-            "stem": "женщин"
+            "stem": "случа"
         },
         {
             "spelling": "воздух",
