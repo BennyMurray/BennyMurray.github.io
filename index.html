@@ -89,7 +89,32 @@
 
 
     <div id="overlay" class="overlay">
-        <div class="txt">Overlay</div>
+
+        <div id="result_response_row" class="row">
+            <div class=".col-12 col-centered choice">
+                <h2 id="result_response_title">Молодец!</h2>
+            </div>
+        </div>
+
+        <div id="result_image_row" class="row">
+            <div class=".col-12 col-centered choice">
+                <img id="tick" src="static/tick.svg"/>
+            </div>
+        </div>
+
+        <div id="correct_answer_row" class="row">
+            <div class=".col-12 col-centered choice">
+                <h2 id="correct_answer_stem">Собак<span id="correct_answer_suffix">е</span></h2>
+            </div>
+        </div>
+
+        <div id="overlay_question_number_display_row" class="row">
+            <div class=".col-12 col-centered choice">
+                <h2><span id="overlay_question_number">2</span>/10</h2>
+            </div>
+        </div>
+
+
     </div>
 
     </div>
@@ -99,19 +124,21 @@
 <script>
 
     var myElement = document.body;
-
+    var correct_sound = new Audio('correct_answer.mp3');
     // create a simple instance
     // by default, it only adds horizontal recognizers
     var mc = new Hammer(myElement);
 
     // listen to events...
     mc.on("swiperight", function(ev) {
-        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('overlay').style.display = 'inline-block';
     });
 
     // listen to events...
     mc.on("swipeleft", function(ev) {
-        document.getElementById('overlay').style.display = 'inline-block';
+        document.getElementById('overlay').style.display = 'none';
+        var correct_sound = new Audio('correct_answer.mp3');
+        correct_sound.play();
     });
 
 

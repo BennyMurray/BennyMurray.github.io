@@ -118,14 +118,47 @@ h1 {
   margin-top: 4%;
   font-weight: 100; }
 
+.overlay_text {
+  font-family: gilroy; }
+
 .overlay {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(83, 156, 244, 0.86);
   z-index: 9999;
   color: white; }
+
+#result_response_row {
+  margin-top: 17%; }
+
+#result_response_title {
+  font-size: 10vw;
+  font-family: gilroy; }
+
+#result_image_row {
+  margin-top: 10%;
+  position: relative;
+  right: 5%; }
+
+#tick {
+  width: 132%; }
+
+#correct_answer_row {
+  margin-top: 10%; }
+
+#correct_answer_stem {
+  font-size: 10vw;
+  font-family: gilroy; }
+
+#correct_answer_suffix {
+  color: #f4bd07; }
+
+#overlay_question_number_display_row {
+  margin-top: 19%;
+  font-family: peace_sans; }
 
 /*# sourceMappingURL=style.css.map */
