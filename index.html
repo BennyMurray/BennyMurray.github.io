@@ -14,21 +14,16 @@
 
         <script>
 
-            // Find the right method, call on correct element
-            function launchIntoFullscreen(element) {
-                if(element.requestFullscreen) {
-                    element.requestFullscreen();
-                } else if(element.mozRequestFullScreen) {
-                    element.mozRequestFullScreen();
-                } else if(element.webkitRequestFullscreen) {
-                    element.webkitRequestFullscreen();
-                } else if(element.msRequestFullscreen) {
-                    element.msRequestFullscreen();
-                }
-            }
-
-            // Launch fullscreen for browsers that support it!
-            launchIntoFullscreen(document.documentElement); // the whole page
+            addEventListener("click", function() {
+                var
+                        el = document.documentElement
+                        , rfs =
+                                el.requestFullScreen
+                                || el.webkitRequestFullScreen
+                                || el.mozRequestFullScreen
+                        ;
+                rfs.call(el);
+            });
 
         </script>
 
