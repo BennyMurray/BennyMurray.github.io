@@ -6,7 +6,9 @@
   src: url(gilroy-extrabold.otf); }
 html {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  background-color: #7ddcd3;
+  overflow: hidden; }
 
 body {
   width: 100%;
