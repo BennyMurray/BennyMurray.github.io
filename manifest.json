@@ -1,5 +1,5 @@
 {
-  "name": "Web Application Manifest Sample",
+  "name": "Russian Case Tester",
   "icons": [
     {
       "src": "homeicon.png",
@@ -11,5 +11,5 @@
   "background_color": "#9E9E9E",
   "start_url": "index.html",
   "display": "standalone",
-  "orientation": "landscape"
+  "orientation": "portrait"
 }
