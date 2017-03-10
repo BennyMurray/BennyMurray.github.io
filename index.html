@@ -36,16 +36,16 @@
             <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
             <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
 
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered progress_incorrect_answer"></div></div>
-            <div class=".col-sm-1.col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered progress_correct_answer"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered progress_correct_answer"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered progress_incorrect_answer"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
-            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle1' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1.col-md-5 .col-lg-1 col-centered"><div id='circle2' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle3' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle4' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle5' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle6' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle7' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle8' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle9' class="circular_div col-centered"></div></div>
+            <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle10' class="circular_div col-centered"></div></div>
 
             <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
             <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
@@ -188,19 +188,25 @@
     }
 
     function correctAnswer(){
+        correct_sound.play();
         document.getElementById('overlay_image').src='static/tick.svg';
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(83,156,244,0.86)';
         document.getElementById('result_response_title').innerHTML = 'Молодец!';
-        correct_sound.play();
+
+
+        document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#00c2ca';
+
     }
 
     function incorrectAnswer(){
+        incorrect_sound.play();
         document.getElementById('overlay_image').src='static/incorrect_answer.svg';
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(242, 85, 160, 0.86)';
         document.getElementById('result_response_title').innerHTML = 'Неправильно!';
-        incorrect_sound.play();
+        document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#f25c79';
+
     }
 
     function cancelOverlay(){
@@ -211,6 +217,7 @@
 
 
 //    BACKGROUND LOGIC
+
 
 
 var cases = ["nominative_singular", "accusative_singular", "genitive_singular", "dative_singular", "prepositional_singular", "instrumental_singular",
