@@ -155,6 +155,8 @@ h1 {
   font-family: gilroy; }
 
 #correct_answer_suffix {
+  font-size: 10vw;
+  font-family: gilroy;
   color: #f4bd07; }
 
 #overlay_question_number_display_row {

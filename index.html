@@ -105,7 +105,7 @@
 
         <div id="correct_answer_row" class="row">
             <div class=".col-12 col-centered choice">
-                <h2 id="correct_answer_stem">Собак<span id="correct_answer_suffix">е</span></h2>
+                <p style="display: inline;" id="correct_answer_stem">/10</p><p style="display: inline;" id="correct_answer_suffix">2</p>
             </div>
         </div>
 
@@ -164,6 +164,7 @@
 
     mc.on("tap", function(ev) {
         if(disable_swipe == true){
+
             nextAnswer();
             cancelOverlay();
             disable_swipe = false;
@@ -173,12 +174,16 @@
 
     function nextAnswer(){
         question = prepareQuestion();
+        document.getElementById('correct_answer_stem').innerHTML = question['stem'];
+        document.getElementById('correct_answer_suffix').innerHTML = question['suffix'];
         document.getElementById('noun_title').innerHTML = question['spelling'];
         document.getElementById('translation_title').innerHTML = question['translation'];
         document.getElementById('choice_title_left').innerHTML = question['answer'];
         document.getElementById('choice_title_right').innerHTML = question['incorrect_answer'];
         document.getElementById('case_title').innerHTML = question['correct_case'];
         document.getElementById('quantity_title').innerHTML = question['quantity'];
+
+
 
     }
 
@@ -229,7 +234,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "виду",
             "dative_plural": "виду",
             "prepositional_plural": "видом",
-            "instrumental_plural": "виде"},
+            "instrumental_plural": "виде",
+            "stem": "вид"},
 
         {
             "spelling": "власть",
@@ -246,8 +252,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "власти",
             "dative_plural": "власти",
             "prepositional_plural": "властию",
-            "instrumental_plural": "власти"
-        },
+            "instrumental_plural": "власти",
+            "stem": "власт"},
 
         {
             "spelling": "письмо",
@@ -264,7 +270,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "письма",
             "dative_plural": "письму",
             "prepositional_plural": "письмом",
-            "instrumental_plural": "письме"
+            "instrumental_plural": "письме",
+            "stem": "письм"
         },
 
         {
@@ -282,11 +289,12 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "женщины",
             "dative_plural": "женщине",
             "prepositional_plural": "женщиною",
-            "instrumental_plural": "женщине"
+            "instrumental_plural": "женщине",
+            "stem": "женщин"
         },
         {
             "spelling": "случай",
-            "translation": "case, occasion, incident",
+            "translation": "case",
             "gender": "MASCULINE",
             "nominative_singular": "случай",
             "accusative_singular": "случай",
@@ -299,7 +307,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "случая",
             "dative_plural": "случаю",
             "prepositional_plural": "случаем",
-            "instrumental_plural": "случае"
+            "instrumental_plural": "случае",
+            "stem": "женщин"
         },
         {
             "spelling": "воздух",
@@ -316,7 +325,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "воздуху",
             "dative_plural": "воздуху",
             "prepositional_plural": "воздухом",
-            "instrumental_plural": "воздухе"
+            "instrumental_plural": "воздухе",
+            "stem": "воздух"
         },
         {
             "spelling": "правда",
@@ -333,7 +343,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "правды",
             "dative_plural": "правде",
             "prepositional_plural": "правдою",
-            "instrumental_plural": "правде"
+            "instrumental_plural": "правде",
+            "stem": "правд"
         },
         {
             "spelling": "лес",
@@ -350,7 +361,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "лесу",
             "dative_plural": "лесу",
             "prepositional_plural": "лесом",
-            "instrumental_plural": "лесу"
+            "instrumental_plural": "лесу",
+            "stem": "лес"
         },
         {
             "spelling": "путь",
@@ -367,7 +379,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "пути",
             "dative_plural": "путю",
             "prepositional_plural": "путём",
-            "instrumental_plural": "путе"
+            "instrumental_plural": "путе",
+            "stem": "пут"
         },
         {
             "spelling": "работа",
@@ -384,10 +397,10 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "genitive_plural": "работы",
             "dative_plural": "работе",
             "prepositional_plural": "работою",
-            "instrumental_plural": "работе"
+            "instrumental_plural": "работе",
+            "stem": "работ"
         }
-
-    ]
+    ];
 
 
     function prepareQuestion(){
@@ -399,6 +412,10 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
         var incorrect_case = shuffeld_cases[1];
         var answer = nouns[counter][correct_case];
         var incorrect_answer = nouns[counter][incorrect_case];
+        var stem = nouns[counter]['stem'];
+        var suffix = answer.replace(stem, "");
+
+
         if(correct_case.includes("plural")){
             quantity = 'plural';
         }else{
@@ -408,7 +425,7 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
         counter += 1;
         global_answer = answer;
         document.getElementById('overlay_question_number').innerHTML = (counter).toString();
-        return {'spelling': spelling, 'translation': translation, 'answer': answer, 'incorrect_answer': incorrect_answer, 'correct_case':correct_case.split('_')[0], 'quantity': quantity}
+        return {'spelling': spelling, 'translation': translation, 'answer': answer, 'incorrect_answer': incorrect_answer, 'correct_case':correct_case.split('_')[0], 'quantity': quantity, 'stem': stem, 'suffix': suffix}
     }
 
 
