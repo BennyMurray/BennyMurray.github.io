@@ -2,7 +2,7 @@
   "name": "RussianCaseTester",
   "short_name": "CaseTester",
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#fff",
   "description": "An Educational Tool for Russian Learners",
   "icons": [{
