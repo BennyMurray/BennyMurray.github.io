@@ -5,12 +5,12 @@
     <title>Case Tester</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="animate.css">
 </head>
 <body>
 
-    <div class="container-fluid">
+    <div id="container" class="container-fluid">
 
         <script>
 
@@ -92,6 +92,22 @@
 
     </div>
 
+
+<script src="hammer.min.js"></script>
+<script>
+
+    var myElement = document.getElementById('container');
+
+    // create a simple instance
+    // by default, it only adds horizontal recognizers
+    var mc = new Hammer(myElement);
+
+    // listen to events...
+    mc.on("swiperight", function(ev) {
+        document.getElementById('noun_title').style.color = 'orange';
+    });
+
+</script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
