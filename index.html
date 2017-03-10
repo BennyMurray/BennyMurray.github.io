@@ -119,7 +119,7 @@
 
     </div>
 
-
+    <script src="static/jquery-3.1.1.min.js"></script>
 <script src="hammer.min.js"></script>
 <script>
 
@@ -183,38 +183,43 @@
         document.getElementById('case_title').innerHTML = question['correct_case'];
         document.getElementById('quantity_title').innerHTML = question['quantity'];
         document.getElementById('quantity_image').src='static/'+ question['quantity'] + '_symbol.svg';
+        $('#quantity_image').addClass('animated bounceIn');
+
 
 
 
     }
 
     function correctAnswer(){
+        $('#quantity_image').removeClass('animated bounceIn');
         correct_sound.play();
         document.getElementById('overlay_image').src='static/tick.svg';
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(83,156,244,0.86)';
         document.getElementById('result_response_title').innerHTML = 'Молодец!';
-
-
         document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#00c2ca';
+        resetAnimations();
 
     }
 
     function incorrectAnswer(){
+
         incorrect_sound.play();
         document.getElementById('overlay_image').src='static/incorrect_answer.svg';
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(242, 85, 160, 0.86)';
         document.getElementById('result_response_title').innerHTML = 'Неправильно!';
         document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#f25c79';
-
+        resetAnimations();
     }
 
     function cancelOverlay(){
         document.getElementById('overlay').style.display = 'none';
     }
 
-
+    function resetAnimations(){
+        $('#quantity_image').removeClass('animated bounceIn');
+    }
 
 
 //    BACKGROUND LOGIC
