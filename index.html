@@ -81,8 +81,8 @@
         <div id="parameters_container" class="row text-align-center">
 
 
-            <div class=".col-2 col-centered margin-right-zero"><img id="number_parameter_image" class="parameter_symbol" src="static/singular_symbol.svg"/><br><h5 id="case_title" class="parameter_subtitle">singular</h5></div>
-            <div class=".col-2 col-centered margin-left-zero"><img id="case_parameter_image" class="parameter_symbol" src="static/case_symbol.svg"/><br><h5 id="quantity_title" class="parameter_subtitle">dative</h5></div>
+            <div class=".col-2 col-centered margin-right-zero"><img id="number_parameter_image" class="parameter_symbol" src="static/singular_symbol.svg"/><br><h5 id="quantity_title" class="parameter_subtitle">singular</h5></div>
+            <div class=".col-2 col-centered margin-left-zero"><img id="case_parameter_image" class="parameter_symbol" src="static/case_symbol.svg"/><br><h5 id="case_title" class="parameter_subtitle">dative</h5></div>
 
         </div>
 
@@ -125,6 +125,7 @@
 
     //    DESIGN LOGIC
     var global_answer = 'I no ting yet';
+    var disable_swipe = false;
     var myElement = document.body;
     var correct_sound = new Audio('static/correct_answer.mp3');
     var incorrect_sound = new Audio('static/incorrect_answer.mp3');
@@ -135,30 +136,39 @@
     var mc = new Hammer(myElement);
 
     mc.on("swiperight", function(ev) {
-        if(document.getElementById('choice_title_right').innerHTML == global_answer){
-            correctAnswer();
-            console.log('swipe right!!! 1 ', global_answer)
-        }else{
-            incorrectAnswer();
-            console.log('swipe right!!! 2', global_answer)
+        if(disable_swipe == false) {
+            if (document.getElementById('choice_title_right').innerHTML == global_answer) {
+                correctAnswer();
+                console.log('swipe right!!! 1 ', global_answer)
+            } else {
+                incorrectAnswer();
+                console.log('swipe right!!! 2', global_answer)
+            }
+            disable_swipe = true;
         }
     });
 
     // listen to events...
     mc.on("swipeleft", function(ev) {
-        if(document.getElementById('choice_title_left').innerHTML == global_answer){
-            correctAnswer();
-            console.log('swipe left!!! 3', global_answer)
-        }else{
-            incorrectAnswer();
-            console.log('swipe left!!! 4', global_answer)
+        if(disable_swipe == false) {
+            if(document.getElementById('choice_title_left').innerHTML == global_answer){
+                correctAnswer();
+                console.log('swipe left!!! 3', global_answer)
+            }else{
+                incorrectAnswer();
+                console.log('swipe left!!! 4', global_answer)
+            }
+            disable_swipe = true;
         }
     });
 
-//    mc.on("tap", function(ev) {
-//        nextAnswer();
-//        prepareQuestion();
-//    });
+    mc.on("tap", function(ev) {
+        if(disable_swipe == true){
+            nextAnswer();
+            cancelOverlay();
+            disable_swipe = false;
+        }
+    });
 
 
     function nextAnswer(){
@@ -185,7 +195,7 @@
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(242, 85, 160, 0.86)';
         document.getElementById('result_response_title').innerHTML = 'Неправильно!';
-//        incorrect_sound.play();
+        incorrect_sound.play();
     }
 
     function cancelOverlay(){
@@ -257,6 +267,126 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
             "instrumental_plural": "письме"
         },
 
+        {
+            "spelling": "женщина",
+            "translation": "woman",
+            "gender": "FEMININE",
+            "nominative_singular": "женщина",
+            "accusative_singular": "женщину",
+            "genitive_singular": "женщины",
+            "dative_singular": "женщине",
+            "prepositional_singular": "женщиною",
+            "instrumental_singular": "женщине",
+            "nominative_plural": "женщина",
+            "accusative_plural": "женщину",
+            "genitive_plural": "женщины",
+            "dative_plural": "женщине",
+            "prepositional_plural": "женщиною",
+            "instrumental_plural": "женщине"
+        },
+        {
+            "spelling": "случай",
+            "translation": "case, occasion, incident",
+            "gender": "MASCULINE",
+            "nominative_singular": "случай",
+            "accusative_singular": "случай",
+            "genitive_singular": "случая",
+            "dative_singular": "случаю",
+            "prepositional_singular": "случаем",
+            "instrumental_singular": "случае",
+            "nominative_plural": "случай",
+            "accusative_plural": "случай",
+            "genitive_plural": "случая",
+            "dative_plural": "случаю",
+            "prepositional_plural": "случаем",
+            "instrumental_plural": "случае"
+        },
+        {
+            "spelling": "воздух",
+            "translation": "air",
+            "gender": "MASCULINE",
+            "nominative_singular": "воздух",
+            "accusative_singular": "воздух",
+            "genitive_singular": "воздуху",
+            "dative_singular": "воздуху",
+            "prepositional_singular": "воздухом",
+            "instrumental_singular": "воздухе",
+            "nominative_plural": "воздух",
+            "accusative_plural": "воздух",
+            "genitive_plural": "воздуху",
+            "dative_plural": "воздуху",
+            "prepositional_plural": "воздухом",
+            "instrumental_plural": "воздухе"
+        },
+        {
+            "spelling": "правда",
+            "translation": "truth",
+            "gender": "FEMININE",
+            "nominative_singular": "правда",
+            "accusative_singular": "правду",
+            "genitive_singular": "правды",
+            "dative_singular": "правде",
+            "prepositional_singular": "правдою",
+            "instrumental_singular": "правде",
+            "nominative_plural": "правда",
+            "accusative_plural": "правду",
+            "genitive_plural": "правды",
+            "dative_plural": "правде",
+            "prepositional_plural": "правдою",
+            "instrumental_plural": "правде"
+        },
+        {
+            "spelling": "лес",
+            "translation": "forest",
+            "gender": "MASCULINE",
+            "nominative_singular": "лес",
+            "accusative_singular": "лес",
+            "genitive_singular": "лесу",
+            "dative_singular": "лесу",
+            "prepositional_singular": "лесом",
+            "instrumental_singular": "лесу",
+            "nominative_plural": "лес",
+            "accusative_plural": "лес",
+            "genitive_plural": "лесу",
+            "dative_plural": "лесу",
+            "prepositional_plural": "лесом",
+            "instrumental_plural": "лесу"
+        },
+        {
+            "spelling": "путь",
+            "translation": "way, track, path",
+            "gender": "MASCULINE",
+            "nominative_singular": "путь",
+            "accusative_singular": "путь",
+            "genitive_singular": "пути",
+            "dative_singular": "путю",
+            "prepositional_singular": "путём",
+            "instrumental_singular": "путе",
+            "nominative_plural": "путь",
+            "accusative_plural": "путь",
+            "genitive_plural": "пути",
+            "dative_plural": "путю",
+            "prepositional_plural": "путём",
+            "instrumental_plural": "путе"
+        },
+        {
+            "spelling": "работа",
+            "translation": "work, job",
+            "gender": "FEMININE",
+            "nominative_singular": "работа",
+            "accusative_singular": "работу",
+            "genitive_singular": "работы",
+            "dative_singular": "работе",
+            "prepositional_singular": "работою",
+            "instrumental_singular": "работе",
+            "nominative_plural": "работа",
+            "accusative_plural": "работу",
+            "genitive_plural": "работы",
+            "dative_plural": "работе",
+            "prepositional_plural": "работою",
+            "instrumental_plural": "работе"
+        }
+
     ]
 
 
@@ -277,8 +407,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
 
         counter += 1;
         global_answer = answer;
-        document.getElementById('overlay_question_number').innerHTML = (counter + 1).toString();
-        return {'spelling': spelling, 'translation': translation, 'answer': answer, 'incorrect_answer': incorrect_answer, 'correct_case':correct_case, 'quantity': quantity}
+        document.getElementById('overlay_question_number').innerHTML = (counter).toString();
+        return {'spelling': spelling, 'translation': translation, 'answer': answer, 'incorrect_answer': incorrect_answer, 'correct_case':correct_case.split('_')[0], 'quantity': quantity}
     }
 
 
@@ -302,7 +432,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
     }
 
 
-prepareQuestion();
+
+
 nextAnswer();
 
 </script>
