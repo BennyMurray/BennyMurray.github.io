@@ -113,7 +113,7 @@
 
         <div id="overlay_question_number_display_row" class="row">
             <div class=".col-12 col-centered choice">
-                <h2><span id="overlay_question_number">2</span>/10</h2>
+                <h2 id="final_score"><span id="overlay_question_number">2</span>/10</h2>
             </div>
         </div>
 
@@ -469,11 +469,30 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
 
     function endRound(){
         incorrect_sound.play();
-        document.getElementById('overlay_image').src='static/incorrect_answer.svg';
+        document.getElementById('correct_answer_stem').innerHTML = '';
+        document.getElementById('overlay_image').src='static/score_a+_animated' +
+                '.svg';
         document.getElementById('result_response_title').innerHTML = 'Score';
+
+        document.getElementById('correct_answer_suffix').innerHTML = '';
+        document.getElementById('final_score').innerHTML = '9/10';
+        document.getElementById('final_score').style.color = '#f4bd07';
         document.getElementById('overlay').style.display = 'inline-block';
-        document.getElementById('overlay').style.backgroundColor = 'rgba(242, 85, 160, 0.86)';
+        document.getElementById('overlay').style.backgroundColor = 'rgba(58, 58, 58, 0.86)';
         document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#f25c79';
+        setTimeout(function(){
+            $('#correct_answer_stem').addClass('animated flip');
+            document.getElementById('correct_answer_stem').innerHTML = 'Отлично!';
+
+
+
+
+
+
+        }, 700);
+
+
+
         resetAnimations();
 
         for(i = 1; i < 11; i++) {

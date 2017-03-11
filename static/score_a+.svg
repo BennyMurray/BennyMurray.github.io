@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 226.4 226.4" style="enable-background:new 0 0 226.4 226.4;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FFFFFF;stroke-width:23.93;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#F4BD07;}
+	.st3{font-family:'Gilroy-ExtraBold';}
+	.st4{font-size:83.1597px;}
+	.st5{letter-spacing:1;}
+	.st6{font-family:'MyriadPro-Regular';}
+	.st7{font-size:48px;}
+</style>
+<title>tick</title>
+<g>
+	<g id="Layer_2">
+		<g id="Layer_1-2">
+			<circle class="st0" cx="113.2" cy="113.2" r="101.3"/>
+		</g>
+	</g>
+	<g>
+		<path class="st1" d="M117.2,143.9H80.9L76,159.2H51.6l33.2-97.6h28.4l33.2,97.6H122L117.2,143.9z M110.5,123L99,87.1L87.6,123
+			H110.5z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 140.0522 126.5403)" class="st2 st3 st4 st5">+</text>
+</g>
+<text transform="matrix(1 0 0 1 92.6668 80.0002)" class="st6 st7">A</text>
+</svg>
