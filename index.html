@@ -168,7 +168,7 @@
 
 
         if(disable_swipe == true){
-            if(counter==2){
+            if(counter==10){
                 endRound();
             }else{
                 nextAnswer();
@@ -469,7 +469,8 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
 
     function endRound(){
         incorrect_sound.play();
-        document.getElementById('correct_answer_stem').innerHTML = '';
+        document.getElementById('correct_answer_stem').innerHTML = 'Отлично!';
+        $('#correct_answer_stem').addClass('animated flipInX');
         document.getElementById('overlay_image').src='static/score_a+_animated' +
                 '.svg';
         document.getElementById('result_response_title').innerHTML = 'Score';
@@ -480,19 +481,7 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
         document.getElementById('overlay').style.display = 'inline-block';
         document.getElementById('overlay').style.backgroundColor = 'rgba(58, 58, 58, 0.86)';
         document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#f25c79';
-        setTimeout(function(){
-            $('#correct_answer_stem').addClass('animated flip');
-            document.getElementById('correct_answer_stem').innerHTML = 'Отлично!';
-
-
-
-
-
-
-        }, 700);
-
-
-
+        $('#overlay_image').addClass('animated bounceInLeft');
         resetAnimations();
 
         for(i = 1; i < 11; i++) {

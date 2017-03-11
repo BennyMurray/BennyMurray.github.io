@@ -9,8 +9,6 @@
 	.st3{font-family:'Gilroy-ExtraBold';}
 	.st4{font-size:83.1597px;}
 	.st5{letter-spacing:1;}
-	.st6{font-family:'MyriadPro-Regular';}
-	.st7{font-size:48px;}
 </style>
 <title>tick</title>
 <g>
@@ -25,5 +23,4 @@
 	</g>
 	<text transform="matrix(1 0 0 1 140.0522 126.5403)" class="st2 st3 st4 st5">+</text>
 </g>
-<text transform="matrix(1 0 0 1 92.6668 80.0002)" class="st6 st7">A</text>
 </svg>
