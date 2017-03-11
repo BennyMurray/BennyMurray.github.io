@@ -134,12 +134,14 @@
 
     //    DESIGN LOGIC
     var begun = false;
+    var sides = ['right','left'];
     var global_answer = 'I no ting yet';
     var disable_swipe = false;
     var myElement = document.body;
     var correct_sound = new Audio('static/correct_answer.mp3');
     var incorrect_sound = new Audio('static/incorrect_answer.mp3');
     var counter = 0;
+    var chosen_answer;
 
     // create a simple instance
     // by default, it only adds horizontal recognizers
@@ -197,13 +199,19 @@
     }
 
     function nextAnswer(){
+
+
+
         question = prepareQuestion();
         document.getElementById('correct_answer_stem').innerHTML = question['stem'];
         document.getElementById('correct_answer_suffix').innerHTML = question['suffix'];
         document.getElementById('noun_title').innerHTML = question['spelling'];
         document.getElementById('translation_title').innerHTML = question['translation'];
-        document.getElementById('choice_title_left').innerHTML = question['answer'];
-        document.getElementById('choice_title_right').innerHTML = question['incorrect_answer'];
+
+        shuffeld_sides = shuffle(sides);
+        document.getElementById('choice_title_'+shuffeld_sides[0]).innerHTML = question['answer'];
+        document.getElementById('choice_title_'+shuffeld_sides[1]).innerHTML = question['incorrect_answer'];
+
         document.getElementById('case_title').innerHTML = question['correct_case'];
         document.getElementById('quantity_title').innerHTML = question['quantity'];
         document.getElementById('quantity_image').src='static/'+ question['quantity'] + '_symbol.svg';
