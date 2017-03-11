@@ -104,7 +104,7 @@ h1 {
   bottom: 34%; }
 
 #parameters_container {
-  margin-top: 10%;
+  margin-top: 40%;
   position: relative;
   left: 2%; }
 
@@ -129,8 +129,19 @@ h1 {
   right: 0;
   bottom: 0;
   background-color: rgba(83, 156, 244, 0.86);
-  z-index: 9999;
+  z-index: 9998;
   color: white; }
+
+.start_screen_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  color: white;
+  background-image: url("static/start_screen.svg");
+  background-size: cover; }
 
 #result_response_row {
   margin-top: 17%; }

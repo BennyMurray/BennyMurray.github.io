@@ -14,20 +14,20 @@
 
     <div id="container" class="container-fluid">
 
-        <!--<script>-->
+        <script>
 
-            <!--addEventListener("click", function() {-->
-                <!--var-->
-                        <!--el = document.documentElement-->
-                        <!--, rfs =-->
-                                <!--el.requestFullScreen-->
-                                <!--|| el.webkitRequestFullScreen-->
-                                <!--|| el.mozRequestFullScreen-->
-                        <!--;-->
-                <!--rfs.call(el);-->
-            <!--});-->
+            addEventListener("click", function() {
+                var
+                        el = document.documentElement
+                        , rfs =
+                                el.requestFullScreen
+                                || el.webkitRequestFullScreen
+                                || el.mozRequestFullScreen
+                        ;
+                rfs.call(el);
+            });
 
-        <!--</script>-->
+        </script>
 
 
 
@@ -119,6 +119,13 @@
 
     </div>
 
+
+    <div id="start_screen" class="start_screen_overlay">
+
+
+    </div>
+
+
     </div>
 
     <script src="static/jquery-3.1.1.min.js"></script>
@@ -126,11 +133,14 @@
 <script>
 
     //    DESIGN LOGIC
+    var begun = false;
     var global_answer = 'I no ting yet';
     var disable_swipe = false;
     var myElement = document.body;
     var correct_sound = new Audio('static/correct_answer.mp3');
     var incorrect_sound = new Audio('static/incorrect_answer.mp3');
+    var intro_music = new Audio('static/kalinka.mp3');
+    intro_music.play();
     var counter = 0;
 
     // create a simple instance
@@ -165,8 +175,9 @@
     });
 
     mc.on("tap", function(ev) {
-
-
+    if(begun == false){
+        begin();
+    }else{
         if(disable_swipe == true){
             if(counter==10){
                 endRound();
@@ -176,8 +187,15 @@
                 disable_swipe = false;
             }
         }
+    }
     });
 
+
+
+    function begin(){
+        document.getElementById('start_screen').style.display = "none";
+        intro_music.play();
+    }
 
     function nextAnswer(){
         question = prepareQuestion();
