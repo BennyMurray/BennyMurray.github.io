@@ -165,11 +165,16 @@
     });
 
     mc.on("tap", function(ev) {
-        if(disable_swipe == true){
 
-            nextAnswer();
-            cancelOverlay();
-            disable_swipe = false;
+
+        if(disable_swipe == true){
+            if(counter==2){
+                endRound();
+            }else{
+                nextAnswer();
+                cancelOverlay();
+                disable_swipe = false;
+            }
         }
     });
 
@@ -201,7 +206,6 @@
         document.getElementById('result_response_title').innerHTML = 'Молодец!';
         document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#00c2ca';
         resetAnimations();
-
     }
 
     function incorrectAnswer(){
@@ -461,6 +465,21 @@ var cases = ["nominative_singular", "accusative_singular", "genitive_singular", 
         }
 
         return array;
+    }
+
+    function endRound(){
+        incorrect_sound.play();
+        document.getElementById('overlay_image').src='static/incorrect_answer.svg';
+        document.getElementById('result_response_title').innerHTML = 'Score';
+        document.getElementById('overlay').style.display = 'inline-block';
+        document.getElementById('overlay').style.backgroundColor = 'rgba(242, 85, 160, 0.86)';
+        document.getElementById('circle'+(counter).toString()).style.backgroundColor = '#f25c79';
+        resetAnimations();
+
+        for(i = 1; i < 11; i++) {
+            document.getElementById('circle' + (i).toString()).style.backgroundColor = '#fff';
+        }
+        counter = 0;
     }
 
 
