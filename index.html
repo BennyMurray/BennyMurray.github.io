@@ -14,20 +14,20 @@
 
     <div id="container" class="container-fluid">
 
-        <script>
+        <!--<script>-->
 
-            addEventListener("click", function() {
-                var
-                        el = document.documentElement
-                        , rfs =
-                                el.requestFullScreen
-                                || el.webkitRequestFullScreen
-                                || el.mozRequestFullScreen
-                        ;
-                rfs.call(el);
-            });
+            <!--addEventListener("click", function() {-->
+                <!--var-->
+                        <!--el = document.documentElement-->
+                        <!--, rfs =-->
+                                <!--el.requestFullScreen-->
+                                <!--|| el.webkitRequestFullScreen-->
+                                <!--|| el.mozRequestFullScreen-->
+                        <!--;-->
+                <!--rfs.call(el);-->
+            <!--});-->
 
-        </script>
+        <!--</script>-->
 
 
 
@@ -191,6 +191,7 @@
         document.getElementById('quantity_title').innerHTML = question['quantity'];
         document.getElementById('quantity_image').src='static/'+ question['quantity'] + '_symbol.svg';
         $('#quantity_image').addClass('animated bounceIn');
+        $('#case_parameter_image').addClass('animated bounceIn');
 
 
 
@@ -225,6 +226,7 @@
 
     function resetAnimations(){
         $('#quantity_image').removeClass('animated bounceIn');
+        $('#case_parameter_image').removeClass('animated bounceIn');
     }
 
 
