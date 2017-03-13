@@ -104,9 +104,10 @@ h1 {
   bottom: 34%; }
 
 #parameters_container {
-  margin-top: 40%;
+  margin-top: 20%;
   position: relative;
-  left: 2%; }
+  left: 2%;
+  bottom: 15%; }
 
 .parameter_symbol {
   width: 40%; }
@@ -138,7 +139,7 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 8000;
+  z-index: 9999;
   color: white;
   background-image: url("static/start_screen.svg");
   background-size: cover; }
