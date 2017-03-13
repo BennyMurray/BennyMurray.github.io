@@ -104,10 +104,10 @@ h1 {
   bottom: 34%; }
 
 #parameters_container {
-  margin-top: 20%;
+  margin-top: 18%;
   position: relative;
   left: 2%;
-  bottom: 6%; }
+  bottom: 0%; }
 
 .parameter_symbol {
   width: 40%; }
