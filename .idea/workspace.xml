@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19bf3a4-7e5c-4a4d-a450-93f6e0ee9d31" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/272b37f7c8ca7a37f1ed717429227092757453a4/style.scssc" afterPath="$PROJECT_DIR$/.sass-cache/272b37f7c8ca7a37f1ed717429227092757453a4/style.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.css.map" afterPath="$PROJECT_DIR$/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style.scss" afterPath="$PROJECT_DIR$/style.scss" />
     </list>
     <ignored path="CaseTester.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,7 +75,7 @@
             <state relative-caret-position="269">
               <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
               <folding>
-                <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+                <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -89,8 +84,8 @@
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+            <state relative-caret-position="798">
+              <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -310,12 +305,12 @@
       <workItem from="1489139561986" duration="20856000" />
       <workItem from="1489186235103" duration="4384000" />
       <workItem from="1489245467544" duration="3530000" />
-      <workItem from="1489250148948" duration="7180000" />
+      <workItem from="1489250148948" duration="7581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46531000" />
+    <option name="totallyTimeSpent" value="46932000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,7 +403,7 @@
         <state relative-caret-position="1065">
           <caret line="71" column="6" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="6" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -462,7 +457,7 @@
         <state relative-caret-position="810">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -492,7 +487,7 @@
         <state relative-caret-position="918">
           <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -522,7 +517,7 @@
         <state relative-caret-position="1770">
           <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -552,7 +547,7 @@
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -572,7 +567,7 @@
         <state relative-caret-position="269">
           <caret line="135" column="20" selection-start-line="135" selection-start-column="20" selection-end-line="135" selection-end-column="20" />
           <folding>
-            <marker date="1489438054000" expanded="true" signature="237:325" ph="{...}" />
+            <marker date="1489438648000" expanded="true" signature="237:325" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -623,8 +618,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="813">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+        <state relative-caret-position="798">
+          <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
           <folding />
         </state>
       </provider>
