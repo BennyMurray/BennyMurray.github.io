@@ -1,7 +1,7 @@
 
 //ENDS ROUND
 function endRound(){
-    incorrect_sound.play();
+    score_sound.play();
     document.getElementById('correct_answer_stem').innerHTML = 'Отлично!';
     $('#correct_answer_stem').addClass('animated flipInX');
     document.getElementById('overlay_image').src='static/score_a+_animated' +
