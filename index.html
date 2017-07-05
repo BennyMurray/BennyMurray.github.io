@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <title>Case Tester</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="animate.css">
+    <script src="logic.js"></script>
+</head>
+<body>
+
+    <div id="container" class="container-fluid">
+
+            <!--<script>-->
+    <!---->
+                <!--addEventListener("click", function() {-->
+                    <!--var-->
+                            <!--el = document.documentElement-->
+                            <!--, rfs =-->
+                                    <!--el.requestFullScreen-->
+                                    <!--|| el.webkitRequestFullScreen-->
+                                    <!--|| el.mozRequestFullScreen-->
+                            <!--;-->
+                    <!--rfs.call(el);-->
+                <!--});-->
+    <!---->
+            <!--</script>-->
+    <!---->
+
+            <!--PROGRESS DISPLAY-->
+            <div id="progress_container" class="row text-align-center">
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle1' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1.col-md-5 .col-lg-1 col-centered"><div id='circle2' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle3' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle4' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle5' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle6' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle7' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle8' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle9' class="circular_div col-centered"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div id='circle10' class="circular_div col-centered"></div></div>
+
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                <div class=".col-sm-1 .col-md-5 .col-lg-1 col-centered"><div class="circular_div col-centered invisible"></div></div>
+                </div>
+            </div>
+
+
+
+            <!--WORD TO BE DECLINED-->
+
+                <div id="noun_container" class="row text-align-center animated bounceIn">
+                    <div style="padding: 0px;" class=".col-12 col-centered"><h1 id="noun_title">Собака</h1></div>
+                </div>
+
+            <!--TRANSLATION-->
+            <div id="translation_container" class="row text-align-center">
+                <div class=".col-12 col-centered"><h1 id="translation_title">dog</h1></div>
+            </div>
+
+
+            <!--PARAMETERS (SINGULAR, GENITIVE etc.)-->
+            <div id="parameters_container" class="row text-align-center">
+
+                <div class=".col-2 col-centered margin-right-zero"><img id="quantity_image" class="parameter_symbol" src="static/singular_symbol.svg"/><br><h5 id="quantity_title" class="parameter_subtitle">singular</h5></div>
+                <div class=".col-2 col-centered margin-left-zero"><img id="case_parameter_image" class="parameter_symbol" src="static/case_symbol.svg"/><br><h5 id="case_title" class="parameter_subtitle">dative</h5></div>
+
+            </div>
+
+            <!--CHOICE-->
+            <div id="choice_container" class="row text-align-center">
+                <div class=".col-5 col-centered choice"><h3 id="choice_title_left" class="choice_title">собакой</h3><br><h5 class="swipe_hint">(swipe left)</h5></div>
+                <div class=".col-2 col-centered"><img id="hand_image" class="animated infinite pulse" src="static/hand.svg"/></div>
+                <div class=".col-5 col-centered choice"><h3 id="choice_title_right" class="choice_title">собаке</h3><br><h5 class="swipe_hint">(swipe right)</h5></div>
+            </div>
+
+        <!--ANSWER OVERLAY)-->
+        <div id="overlay" class="overlay">
+
+            <div id="result_response_row" class="row">
+                <div class=".col-12 col-centered choice">
+                    <h2 id="result_response_title">Молодец!</h2>
+                </div>
+            </div>
+
+            <div id="result_image_row" class="row">
+                <div class=".col-12 col-centered choice">
+                    <img id="overlay_image" src="static/tick.svg"/>
+                </div>
+            </div>
+
+            <div id="correct_answer_row" class="row">
+                <div class=".col-12 col-centered choice">
+                    <p style="display: inline;" id="correct_answer_stem">/10</p><p style="display: inline;" id="correct_answer_suffix">2</p>
+                </div>
+            </div>
+
+            <div id="overlay_question_number_display_row" class="row">
+                <div class=".col-12 col-centered choice">
+                    <h2 id="final_score"><span id="overlay_question_number">2</span>/10</h2>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--START SCREEN-->
+        <div id="start_screen" class="start_screen_overlay">
+
+
+        </div>
+
+
+    </div>
+
+    <!--DEPENDECIES-->
+    <script src="static/jquery-3.1.1.min.js"></script>
+    <script src="hammer.min.js"></script>
+    <script>
+
+
+    var begun = false;
+    var sides = ['right','left'];
+    var global_answer = 'I no ting yet';
+    var disable_swipe = false;
+    var myElement = document.body;
+    var correct_sound = new Audio('static/correct_answer.mp3');
+    var incorrect_sound = new Audio('static/incorrect_answer.mp3');
+    var score_sound = new Audio('static/score.mp3');
+    var score = 0;
+    var scores = ['f','d','c','c+','b-','b','b+','a-','a','a+','p']
+    var counter = 0;
+    var chosen_answer;
+
+    // create a simple instance
+    // by default, it only adds horizontal recognizers
+    var mc = new Hammer(myElement);
+
+    mc.on("swiperight", function(ev) {
+        if(disable_swipe == false) {
+            if (document.getElementById('choice_title_right').innerHTML == global_answer) {
+                correctAnswer();
+                console.log('swipe right!!! 1 ', global_answer)
+            } else {
+                incorrectAnswer();
+                console.log('swipe right!!! 2', global_answer)
+            }
+            disable_swipe = true;
+        }
+    });
+
+    // listen to events...
+    mc.on("swipeleft", function(ev) {
+        if(disable_swipe == false) {
+            if(document.getElementById('choice_title_left').innerHTML == global_answer){
+                correctAnswer();
+                console.log('swipe left!!! 3', global_answer)
+            }else{
+                incorrectAnswer();
+                console.log('swipe left!!! 4', global_answer)
+            }
+            disable_swipe = true;
+        }
+    });
+
+    mc.on("tap", function(ev) {
+    if(begun == false){
+        begun = true;
+        begin();
+    }else{
+        if(disable_swipe == true){
+            if(counter==10){
+                endRound();
+            }else{
+                nextAnswer();
+                cancelOverlay();
+                disable_swipe = false;
+            }
+        }
+    }
+    });
+
+
+nextAnswer();
+
+</script>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
