@@ -8,5 +8,6 @@ A Progressive Web Application for learning the declension of Russian nouns.
 ![case tester screenshots-01](https://user-images.githubusercontent.com/17185335/28251498-80c0b63e-6a76-11e7-9330-f5593e955f66.png)
 
 ## Demo
-![casetester-gif](https://user-images.githubusercontent.com/17185335/28251501-92d95e5c-6a76-11e7-9317-c8bcfd5e2eac.gif)
+![casetesterlooping](https://user-images.githubusercontent.com/17185335/28251537-69aea40a-6a77-11e7-8df3-c286e61dcda1.gif)
+
 
