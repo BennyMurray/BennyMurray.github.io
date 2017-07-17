@@ -1,4 +1,4 @@
-# Russian-Grammatical-Case-
+# Russian Grammatical Case Tester
 
 A Progressive Web Application for learning the declension of Russian nouns. 
 
